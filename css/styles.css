@@ -271,7 +271,7 @@ img {
 .modal {
   position: absolute;
   padding: 40px;
-  height: 581px;
+  min-height: 581px;
   min-width: 528px;
   background-color: var(--primary-background);
   top: 50%;
@@ -297,7 +297,8 @@ img {
   transition: fill 250ms var(--time-declaration);
 }
 
-.backdrop-btn:focus {
+.backdrop-btn:focus,
+.backdrop-btn:hover {
   fill: var(--accent-color);
 }
 
@@ -385,7 +386,7 @@ img {
   color: var(#212121);
   font-weight: 400;
   font-size: 12px;
-  line-height: 1.2;
+  line-height: 1.17;
   letter-spacing: 0.01em;
 }
 
@@ -393,7 +394,7 @@ img {
   color: rgba(117, 117, 117, 0.5);
   font-weight: 400;
   font-size: 12px;
-  line-height: 1.2;
+  line-height: 1.17;
   letter-spacing: 0.01em;
 }
 
@@ -405,9 +406,13 @@ img {
 }
 
 .checkbox {
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  appearance: none;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 .checkbox + .check-svg {
@@ -418,26 +423,43 @@ img {
     fill 250ms var(--time-declaration);
 }
 
-.checkbox:checked + .check-svg,
-.checkbox:focus + .check-svg {
+.checkbox:checked + .check-svg {
   fill: var(--primary-background);
   background-color: var(--accent-color);
   border: none;
 }
 
-.lycense-text {
+.checkbox:focus + .check-svg {
+  border: 2px solid #000000;
+  border-radius: 2px;
+  fill: var(--primary-background);
+}
+
+.checkbox:focus:checked + .check-svg {
+  fill: var(--primary-background);
+  background-color: var(--accent-color);
+  border: none;
+}
+
+.checkbox:focus:not(:checked) + .check-svg {
+  border: 2px solid #000000;
+  border-radius: 2px;
+  fill: var(--primary-background);
+}
+
+.license-text {
   color: var(--primary-text-color);
   font-weight: 400;
   font-size: 14px;
-  line-height: 1.7;
+  line-height: 1.71;
   letter-spacing: 0.03em;
 }
 
-.lycense-link {
+.license-link {
   color: var(--accent-color);
   font-weight: 400;
   font-size: 14px;
-  line-height: 1.7;
+  line-height: 1.71;
   letter-spacing: 0.03em;
 }
 
@@ -452,13 +474,14 @@ img {
   font-family: inherit;
   font-weight: 700;
   font-size: 16px;
-  line-height: 1.9;
+  line-height: 1.875;
   letter-spacing: 0.06em;
   transition: box-shadow 250ms var(--time-declaration),
     background-color 250ms var(--time-declaration);
 }
 
-.modal-submit:focus {
+.modal-submit:focus,
+.modal-submit:hover {
   background-color: var(--button-active);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
@@ -589,6 +612,7 @@ img {
   line-height: 1.19;
   text-align: center;
 }
+
 .team-social {
   display: flex;
   justify-content: center;
