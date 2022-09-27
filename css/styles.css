@@ -327,7 +327,7 @@ img {
 }
 
 .modal-text {
-  display: inline-block;
+  display: block;
   margin-bottom: 4px;
   color: var(--primary-text-color);
   font-weight: 400;
@@ -430,21 +430,11 @@ img {
 }
 
 .checkbox:focus + .check-svg {
-  border: 2px solid #000000;
-  border-radius: 2px;
-  fill: var(--primary-background);
+  border: 2px solid var(--accent-color);
 }
 
 .checkbox:focus:checked + .check-svg {
-  fill: var(--primary-background);
-  background-color: var(--accent-color);
   border: none;
-}
-
-.checkbox:focus:not(:checked) + .check-svg {
-  border: 2px solid #000000;
-  border-radius: 2px;
-  fill: var(--primary-background);
 }
 
 .license-text {
